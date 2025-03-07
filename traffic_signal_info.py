@@ -12,6 +12,7 @@ app = Flask(__name__)
 model = pd_signal.init()
 translator = Translator()
 
+API_KEY = "API KEY"
 
 @app.route('/trafficSignal', methods=['GET'])
 def explain_traffic_signal():
@@ -83,7 +84,7 @@ def get_quiz():
     response = 'No content'
 
     client = openai.OpenAI(
-        api_key="API_KEY")
+        api_key=API_KEY)
     try:
         response = client.chat.completions.create(
             model="gpt-4-turbo",
@@ -129,7 +130,7 @@ def learn_traffic():
     response = 'No content'
 
     client = openai.OpenAI(
-        api_key="API_KEY")
+        api_key=API_KEY)
     try:
         response = client.chat.completions.create(
             model="gpt-4-turbo",
